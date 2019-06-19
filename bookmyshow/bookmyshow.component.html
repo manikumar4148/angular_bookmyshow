@@ -1,0 +1,52 @@
+<body>
+<br> <b> <caption>BookMyShow</caption></b><br><br><br>
+  <div>
+    <caption>Movies</caption><br>
+    <table id='table1'>
+      <tr *ngFor='let item of movie; let i=index'>
+        <td>{{item.title}}</td>
+        <td><button (click)='movielist(item)'>Select</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+      <caption>Theaters</caption><br>
+    <table>
+      <tr *ngFor='let i of lists'>
+        <td>{{i}}</td>
+        <td><button (click)='theaterslist(i)'>Book</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <form>
+      <caption>Tickets/Mobile:</caption>&nbsp;<br>
+      <label for="hmt">How Many tickets</label>
+      <input type='number' min='1' max='4' name="hmt" [(ngModel)]="tickets" required align-text='middel'>
+      <label for="phone">mobile#</label>
+      <input type='text'  name="phone"  [(ngModel)]='phone' required>
+
+      <button (click)="booktickets()" >Book</button>
+    </form>
+  </div>
+  <br>
+  <div>
+    <caption>bookingStatus:</caption>&nbsp;
+    <table>
+      <tr>
+        <td>MovieName</td>
+        <td>Place</td>
+        <td>ticketscount</td>
+        <td>Moblie</td>
+      </tr>
+      <tr>
+        <td>{{booking.title}}</td>
+        <td>{{booking.theater}} </td>
+        <td>{{booking.ticket}}</td>
+        <td>{{booking.mobile}}</td>
+      </tr>
+    </table>
+  </div>
+</body>

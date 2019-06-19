@@ -1,0 +1,12 @@
+body{
+    display:grid;
+    grid-template-columns: repeat(3, 2fr);
+
+}
+
+table{
+    background-color:seashell;
+}
+#table1{
+    background-color: cyan;
+}
